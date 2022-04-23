@@ -1,7 +1,7 @@
 import handler from "./util/handler";
 import dynamoDb from "./util/dynamodb";
 
-export const main = handler(async () => {
+export const main = handler(async (event) => {
   const params = {
     TableName: process.env.TABLE_NAME,
     // 'KeyConditionExpression' defines the condition for the query

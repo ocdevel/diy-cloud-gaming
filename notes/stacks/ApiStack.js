@@ -7,8 +7,8 @@ export default class ApiStack extends sst.Stack {
   constructor(scope, id, props) {
     super(scope, id, props);
 
-    const { table } = props;
 
+    const { table } = props
     // Create the API
     this.api = new sst.Api(this, "Api", {
       defaultAuthorizationType: "AWS_IAM",
