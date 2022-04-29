@@ -13,7 +13,7 @@ export default function handler(lambda) {
       }
   
       // Return HTTP response
-      return return {
+      return {
         statusCode,
         body: JSON.stringify(body),
         headers: {
@@ -21,4 +21,4 @@ export default function handler(lambda) {
           "Access-Control-Allow-Credentials": true,
         },
     };
-    }
+    }}
