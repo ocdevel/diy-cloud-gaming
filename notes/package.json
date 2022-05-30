@@ -15,6 +15,10 @@
     ]
   },
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.8.0",
+    "@mui/material": "^5.8.1",
     "@serverless-stack/cli": "0.69.6",
     "@serverless-stack/resources": "0.69.6",
     "aws-cdk-lib": "2.15.0",
