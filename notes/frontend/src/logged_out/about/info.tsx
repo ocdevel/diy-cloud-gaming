@@ -15,7 +15,7 @@ export default function Info() {
             </ul>
             </li>
         </ol>
-        <p>It will output your login credentials to your new Windows PC. Use <a href="https://download.nice-dcv.com/">DCV Viewer</a> to log in. Enter the connection info output from Terraform in terminal (IP, Administrator, Password). <a href="https://github.com/ocdevel/diy-cloud-gaming/wiki/Notes#nicedcv-woes">Note: Nice DCV woes</a></p>
+        <p>It will output your login credentials to your new Windows PC. Use <a href="src/logged_out/about/info">DCV Viewer</a> to log in. Enter the connection info output from Terraform in terminal (IP, Administrator, Password). <a href="https://github.com/ocdevel/diy-cloud-gaming/wiki/Notes#nicedcv-woes">Note: Nice DCV woes</a></p>
         <h2 id="on-windows-server-through-rdp-">On Windows Server (through RDP)</h2>
         <p>Open <code>Server Manager</code> on Windows</p>
         <ol>

@@ -4,24 +4,24 @@ export default function Note() {
     return <div>
         <h2 id="original-blog-post">Original blog post</h2>
         <p>I started this based on following this <a
-            href="https://aws.amazon.com/blogs/gametech/enabling-quest-2-ar-vr-on-ec2-with-nice-dcv/">AWS guide</a>, which
+            href="src/logged_out/about/Notes">AWS guide</a>, which
             worked! But had some problems. So I figured I&#39;d make a project to make it easier, with updated notes for a
             better setup. So use my guide instead.</p>
         <p>I got the above solution working and I love it; later I&#39;m going to try another AWS solution, <a
-            href="https://aws.amazon.com/blogs/architecture/field-notes-streaming-vr-to-wireless-headsets-using-nvidia-cloudxr/">GeForce
+            href="https://aws.amazon.com/blogs/architecture/field-notes-streaming-vr-to-wireless-headsets-using-nvidia-cloudxr/Notes.tsx">GeForce
             CloudXR server</a>. Even more techie, it requires developer accounts for Nvidia, Oculus, and some manual
             PC-&gt;Quest USB file installations. But it might be even faster for streaming.</p>
         <h2 id="non-tech-people">Non-tech people</h2>
         <p>Notes for first-timers to Git, AWS, etc. Follow below if this isn&#39;t obvious stuff to you.</p>
         <h3 id="git">Git</h3>
-        <p><a href="https://code.visualstudio.com/">Download VSCode</a>. Create a new project from Github,
+        <p><a href="src/logged_out/about/Notes">Download VSCode</a>. Create a new project from Github,
             use <code>https://github.com/ocdevel/diy-cloud-gaming.git</code>. I think VSCode will handle all the Git stuff for
             you so you don&#39;t need to learn anything.</p>
         <p>If not, <a
             href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository">follow
             these docs</a> (and let me know so I can update this section).</p>
         <h3 id="aws">AWS</h3>
-        <p>Setup <a href="https://aws.amazon.com/">AWS</a>. </p>
+        <p>Setup <a href="src/logged_out/about/Notes">AWS</a>. </p>
         <ol>
             <li>Create account, enter credit card, etc. <a
                 href="https://docs.aws.amazon.com/accounts/latest/reference/root-user-mfa.html">Activate MFA</a> on the root
@@ -32,7 +32,7 @@ export default function Note() {
                 new IAM user</a> inside AWS, never use your root account for development stuff. Call it <code>admin</code> or
                 whatever. Give it <code>AdministratorAccess</code>. Probably wanna add MFA to this guy too.
             </li>
-            <li>Inside VSCode&#39;s Terminal, install <a href="https://aws.amazon.com/cli/">aws-cli</a>. <a
+            <li>Inside VSCode&#39;s Terminal, install <a href="src/logged_out/about/Notes">aws-cli</a>. <a
                 href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html">Generate access
                 keys</a> for your <code>admin</code> user. Copy those permissions in to <code>aws configure</code>.
             </li>
@@ -42,7 +42,7 @@ export default function Note() {
             </li>
         </ol>
         <h2 id="nicedcv-woes">NiceDCV woes</h2>
-        <p><a href="https://download.nice-dcv.com/">NiceDCV</a> a remote desktop protocol for high-performance computing (eg
+        <p><a href="src/logged_out/about/Notes">NiceDCV</a> a remote desktop protocol for high-performance computing (eg
             gaming), built by AWS. It&#39;s a &quot;competitor&quot; to Parsec, and I recommend the latter for your actual
             gaming, because DCV has <em>lots</em> of bugs. I find the mouse is a pain to work with. They have &quot;relative
             mouse position&quot; option in DCV, but I can&#39;t get it working. The display resolution never sticks, so
@@ -66,7 +66,7 @@ export default function Note() {
             use <code>G/V Instance</code>.</p>
         <p><strong>On Demand Instances</strong></p>
         <ol>
-            <li>Log into <a href="https://console.aws.amazon.com/">AWS Console</a>.</li>
+            <li>Log into <a href="src/logged_out/about/Notes">AWS Console</a>.</li>
             <li>Seach or &quot;Service Quotas&quot;. Make sure you&#39;re in the region you&#39;ll be running your PC!
                 Top-right will say <code>N. Virginia</code> or something, click it and select your region (eg
                 I&#39;m <code>us-west-2</code>)
