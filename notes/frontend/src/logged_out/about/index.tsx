@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Info() {
+export default function Index() {
     return <div>
         <h1 id="do-it-yourself-cloud-gaming">Do-it-yourself Cloud Gaming</h1>
         <p>Stadia, Luna, GeForce now? Limited libraries. Plus you have your own on Steam, GOG, etc. Monthly lock-in prices, this solution lets you pay by the hour of play. Read more <a href="https://github.com/ocdevel/diy-cloud-gaming/wiki/Why-DIY">justification here</a></p>
