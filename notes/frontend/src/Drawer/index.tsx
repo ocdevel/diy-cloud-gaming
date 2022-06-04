@@ -20,6 +20,7 @@ export default function Index(
         <Button href='/about' color="inherit">About</Button>
     ]
     const sideBarLinks = [
+        {text: "Payments", href: '/drawer/Payments', icon: null},
         {text: "About", href: "/about", icon: null},
         {text: "Notes", href: "/about/notes", icon: null},
     ].map(({text, href, icon}, index) => (
