@@ -2,10 +2,8 @@ import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import CssBaseline from '@mui/material/CssBaseline';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
@@ -71,14 +69,16 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     justifyContent: 'flex-end',
 }));
 
-interface DrawerProps {
-    sidelist: React.ReactElement
-    content: React.ReactElement
+
+interface Props {
     title: string
+    children: React.ReactElement
+    sideBarLinks: React.ReactElement[]
+    appBarLinks: React.ReactElement[]
 }
 
 export default function PersistentDrawerLeft(
-    {sidelist, content, title}: DrawerProps
+    {title, children, sideBarLinks, appBarLinks}: Props
 ) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
@@ -104,11 +104,16 @@ export default function PersistentDrawerLeft(
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div"  sx={{ flexGrow: 1 }}>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="a"
+                        sx={{flexGrow: 1}}
+                        href="/"
+                    >
                         {title}
                     </Typography>
-                    <Button href='/login' color="inherit">Login</Button>
-                    <Button href='/about' color="inherit">About</Button>
+                    {appBarLinks}
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -131,12 +136,16 @@ export default function PersistentDrawerLeft(
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {sidelist}
+                    {sideBarLinks}
                 </List>
             </Drawer>
             <Main open={open}>
                 <DrawerHeader />
-                {content}
+
+                {/* App Content */}
+                {children}
+
+
             </Main>
         </Box>
     );

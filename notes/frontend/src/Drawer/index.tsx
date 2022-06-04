@@ -1,41 +1,43 @@
 import React from 'react'
+import Wrapper from './Wrapper'
 import ListItem from "@mui/material/ListItem";
+import Button from "@mui/material/Button";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import Appbar from './Appbar'
-
-const title = "DIY Cloud Gaming"
-
-interface ListItemProps {
-    text: string
-    href: string
-    icon: any
-}
-function ListItem_({text, href, icon}: ListItemProps) {
-    return <ListItem
-        key={text}
-        disablePadding
-    >
-        <ListItemButton href={href}>
-            <ListItemIcon>
-                {/*index % 2 === 0 ? <InboxIcon /> : <MailIcon />*/}
-                {icon}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-        </ListItemButton>
-    </ListItem>
-}
-
-const sidelist = <>
-    <ListItem_ text="About" href="/about" icon={null} />,
-    <ListItem_ text="Notes" href="/about/notes" icon={null} />
-</>
-
+import LoginIcon from '@mui/icons-material/Login';
 
 interface Props {
     children: React.ReactElement
 }
-export default function Drawer({children}: Props) {
-    return <Appbar sidelist={sidelist} title={title} content={children} />
+
+export default function Index(
+    {children}: Props
+) {
+    const title = "DIY Cloud Gaming"
+    const appBarLinks = [
+        <Button href='/login' color="inherit">Login</Button>,
+        <Button href='/about' color="inherit">About</Button>
+    ]
+    const sideBarLinks = [
+        {text: "About", href: "/about", icon: null},
+        {text: "Notes", href: "/about/notes", icon: null},
+    ].map(({text, href, icon}, index) => (
+        <ListItem key={text} disablePadding>
+            <ListItemButton href={href}>
+                <ListItemIcon>
+                    {icon}
+                </ListItemIcon>
+                <ListItemText primary={text} />
+            </ListItemButton>
+        </ListItem>
+    ))
+
+    return <Wrapper
+        title={title}
+        sideBarLinks={sideBarLinks}
+        appBarLinks={appBarLinks}
+    >
+        {children}
+    </Wrapper>
 }

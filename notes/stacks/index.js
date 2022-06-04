@@ -2,7 +2,11 @@ import FrontendStack from "./FrontendStack";
 import AuthStack from "./AuthStack";
 import ApiStack from "./ApiStack";
 import StorageStack from "./StorageStack";
+import * as cdk from "@aws-cdk/core";
 
+export default function main(app) {
+  cdk.Tags.of(app).add("Name", "diy-cloud-gaming");
+}
 export default function main(app) {
   const storageStack = new StorageStack(app, "storage");
 
