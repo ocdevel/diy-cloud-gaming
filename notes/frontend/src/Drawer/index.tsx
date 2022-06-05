@@ -1,5 +1,6 @@
 import React from 'react'
 import Wrapper from './Wrapper'
+import Account from './Account'
 import ListItem from "@mui/material/ListItem";
 import Button from "@mui/material/Button";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -17,12 +18,14 @@ export default function Index(
     const title = "DIY Cloud Gaming"
     const appBarLinks = [
         <Button href='/login' color="inherit">Login</Button>,
-        <Button href='/about' color="inherit">About</Button>
+        // <Button href='/about' color="inherit">About</Button>
     ]
     const sideBarLinks = [
-        {text: "Payments", href: '/drawer/Payments', icon: null},
+
         {text: "About", href: "/about", icon: null},
         {text: "Notes", href: "/about/notes", icon: null},
+        {text: "Account", href: '/Drawer/Account', icon: null},
+
     ].map(({text, href, icon}, index) => (
         <ListItem key={text} disablePadding>
             <ListItemButton href={href}>

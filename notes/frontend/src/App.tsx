@@ -7,7 +7,7 @@ import Drawer from './Drawer'
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route, Link } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
-import Payments from './Drawer/Payments';
+import Account from './Drawer/Account';
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="about" element={<About />} />
                     <Route path="about/notes" element={<Notes />} />
-                    <Route path="Drawer/Payments" element={<Payments />} />
+                    <Route path="Drawer/Account" element={<Account />} />
                 </Routes>
             </Drawer>
         </BrowserRouter>
