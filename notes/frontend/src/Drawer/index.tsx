@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import Wrapper from './Wrapper'
 import Account from './Account'
 import ListItem from "@mui/material/ListItem";
@@ -15,18 +15,23 @@ interface Props {
 export default function Index(
     {children}: Props
 ) {
+    const [loggedIn, setLoggedIn] = useState(false)
     const title = "DIY Cloud Gaming"
     const appBarLinks = [
-        <Button href='/login' color="inherit">Login</Button>,
+        // <Button href='/login' color="inherit">Login</Button>,
+        <Button onClick = {() => {setLoggedIn(!loggedIn)}} color="inherit">{loggedIn ? 'Logout' : 'Login'}</Button>,
         // <Button href='/about' color="inherit">About</Button>
     ]
-    const sideBarLinks = [
+    const sideBarLinksObj = loggedIn ? [
+        {text: "Account", href: '/Drawer/Account', icon: null},
+    ] : [
 
         {text: "About", href: "/about", icon: null},
         {text: "Notes", href: "/about/notes", icon: null},
-        {text: "Account", href: '/Drawer/Account', icon: null},
 
-    ].map(({text, href, icon}, index) => (
+
+    ]
+     const sideBarLinks = sideBarLinksObj.map(({text, href, icon}, index) => (
         <ListItem key={text} disablePadding>
             <ListItemButton href={href}>
                 <ListItemIcon>
